@@ -18,7 +18,7 @@ class CellConfigDivision: UICollectionViewCell {
     func startCell() {
         viewCircle.asCircle()
         viewDashed.alpha = 0.2
-        viewDashed.backgroundColor = UIColor.clear
+        viewDashed.backgroundColor = .clear
         
         viewDashed.updateConstraints()
         viewDashed.setNeedsLayout()
@@ -40,7 +40,6 @@ class CellConfigDivision: UICollectionViewCell {
         }
         
         // we need call "setNeedsLayout" and "layoutIfNeeded": https://github.com/robb/Cartography/issues/258
-        viewDashed.updateConstraints()
         viewDashed.setNeedsLayout()
         viewDashed.layoutIfNeeded()
         
