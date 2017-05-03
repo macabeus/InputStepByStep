@@ -1,0 +1,20 @@
+PODS:
+  - Cartography (1.1.0)
+  - InputStepByStep (0.0.1):
+    - Cartography (~> 1.1)
+
+DEPENDENCIES:
+  - Cartography (~> 1.1)
+  - InputStepByStep (from `.`)
+
+EXTERNAL SOURCES:
+  InputStepByStep:
+    :path: .
+
+SPEC CHECKSUMS:
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
+  InputStepByStep: 3bcafa2c0fffb48e2f1de77aca0b5cfa8b4271d7
+
+PODFILE CHECKSUM: 0e69e815adbc855664262478514e7b7a29ae840e
+
+COCOAPODS: 1.2.0
