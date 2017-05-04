@@ -11,6 +11,8 @@ import UIKit
 class CellConfigInput: UICollectionViewCell {
     
     @IBOutlet weak var labelField: UILabel!
+    var inputName: String?
+    var configTitle: String?
     var myCellDivisin: CellConfigDivision?
     
     override var canBecomeFocused: Bool {

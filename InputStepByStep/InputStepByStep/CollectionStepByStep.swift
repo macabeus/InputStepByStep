@@ -25,18 +25,19 @@ public struct ConfigInput {
 
 public enum CellCreateGrid {
     case name(String)
-    case input(ConfigInput, cellName: String, currentValue: String)
+    case input(ConfigInput, cellName: String)
     case finish()
 }
 
 public protocol CollectionStepByStepProtocol {
     var cellConfigList: [CellCreateGrid] { get set }
-    func cellFinishAction()
+    func cellFinishAction(inputValues: [String: [String: String]])
 }
 
 public class CollectionStepByStep: UICollectionViewController, CollectionStepyByStepLayoutDelegate {
     
     public var delegate: CollectionStepByStepProtocol?
+    var inputValues: [String: [String: String]] = [:]
     let showInput = ShowInput()
     
     public override func viewDidLoad() {
@@ -63,6 +64,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
     }
     
     var lastCellDivision: CellConfigDivision?
+    var currentTitle: String?
     override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let currentCell = delegate!.cellConfigList[indexPath.section]
@@ -78,19 +80,23 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
             } else {
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigTitle", for: indexPath)
                 (cell as! CellConfigTitle).labelTitle.text = name
+                currentTitle = name
+                inputValues[name] = [:]
             }
             
             return cell
-        case .input(let input, _, let value):
+        case .input(let input, _):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigInput", for: indexPath) as! CellConfigInput
             
             lastCellDivision!.totalInputs += 1
+            cell.inputName = input.label
+            cell.configTitle = currentTitle
             cell.myCellDivisin = lastCellDivision
             
-            if value == "" {
-                cell.labelField.text = input.label
-            } else {
+            if let value = inputValues[cell.configTitle!]![cell.inputName!] {
                 cell.labelField.text = value
+            } else {
+                cell.labelField.text = input.label
             }
             
             return cell
@@ -120,24 +126,16 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
                     return
                 }
                 
-                cell.myCellDivisin!.totalInputsFilled += 1
+                self.inputValues[cell.configTitle!]![cell.inputName!] = text
+                cell.myCellDivisin!.totalInputsFilled = self.inputValues[cell.configTitle!]!.count
                 cell.myCellDivisin!.updateProress()
                 cell.labelField.text = text
-                
-                
-                switch self.delegate!.cellConfigList[indexPath.section] {
-                case .input(let input, let cellName, _):
-                    self.delegate!.cellConfigList[indexPath.section] = CellCreateGrid.input(input, cellName: cellName, currentValue: text)
-                    
-                default:
-                    return
-                }
             }
             
             showInput.start(view: cell)
             
         } else if ((cell as? CellConfigFinish) != nil) {
-            delegate!.cellFinishAction()
+            delegate!.cellFinishAction(inputValues: inputValues)
         }
     }
     

@@ -22,23 +22,23 @@ class ViewController: UIViewController, CollectionStepByStepProtocol {
     
     var cellConfigList: [CellCreateGrid] = [
         .name("part 1"),
-        CellCreateGrid.input(ConfigInput(name: "user", label: "User"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "user", label: "User"), cellName: ""),
         .name("part 2"),
-        CellCreateGrid.input(ConfigInput(name: "password", label: "Password"), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "spassword", label: "Second password"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "password", label: "Password"), cellName: ""),
+        CellCreateGrid.input(ConfigInput(name: "spassword", label: "Second password"), cellName: ""),
         .name("part 3"),
-        CellCreateGrid.input(ConfigInput(name: "firtname", label: "Your first name"), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "lastname", label: "Your last name"), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "othername", label: "Other name"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "firtname", label: "Your first name"), cellName: ""),
+        CellCreateGrid.input(ConfigInput(name: "lastname", label: "Your last name"), cellName: ""),
+        CellCreateGrid.input(ConfigInput(name: "othername", label: "Other name"), cellName: ""),
         .name("part 4"),
-        CellCreateGrid.input(ConfigInput(name: "github", label: "Github"), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "facebook", label: "Facebook"), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "linkedin", label: "Linkedin"), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "email", label: "E-Mail"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "github", label: "Github"), cellName: ""),
+        CellCreateGrid.input(ConfigInput(name: "facebook", label: "Facebook"), cellName: ""),
+        CellCreateGrid.input(ConfigInput(name: "linkedin", label: "Linkedin"), cellName: ""),
+        CellCreateGrid.input(ConfigInput(name: "email", label: "E-Mail"), cellName: ""),
         .finish()
     ]
     
-    func cellFinishAction() {
+    func cellFinishAction(inputValues: [String: [String: String]]) {
         print("do something...")
     }
     
