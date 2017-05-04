@@ -29,7 +29,7 @@ public struct ConfigInput {
 
 public enum CellCreateGrid {
     case name(String)
-    case input(ConfigInput, cellName: String, currentValue: String) // TODO: Desacoplar lógica do ConfigInput da parte de criar grid para algo genérico
+    case input(ConfigInput, cellName: String, currentValue: String)
     case finish()
 }
 
@@ -66,6 +66,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
         }
     }
     
+    var lastCellDivision: CellConfigDivision?
     override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let currentCell = delegate!.cellConfigList[indexPath.section]
@@ -77,6 +78,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
             if indexPath.item == 0 {
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSDivision", for: indexPath)
                 (cell as! CellConfigDivision).startCell()
+                lastCellDivision = (cell as! CellConfigDivision)
             } else {
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigTitle", for: indexPath)
                 (cell as! CellConfigTitle).labelTitle.text = name
@@ -85,7 +87,9 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
             return cell
         case .input(let input, _, let value):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigInput", for: indexPath) as! CellConfigInput
-            // if input.obligatory { ... // TODO: Colocar na UI algo para diferenciar quando o campo é obrigatório/opcional
+            
+            lastCellDivision!.totalInputs += 1
+            cell.myCellDivisin = lastCellDivision
             
             if value == "" {
                 cell.labelField.text = input.label
@@ -116,12 +120,19 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
         
         if let cell = cell as? CellConfigInput {
             showInput.callback = { text in
-                // TODO: é preciso atualizar o status de "cheio" e "vazio" daquela bolinha da cell step
+                if text == "" { // cancel
+                    return
+                }
+                
+                cell.myCellDivisin!.totalInputsFilled += 1
+                cell.myCellDivisin!.updateProress()
                 cell.labelField.text = text
+                
                 
                 switch self.delegate!.cellConfigList[indexPath.section] {
                 case .input(let input, let cellName, _):
                     self.delegate!.cellConfigList[indexPath.section] = CellCreateGrid.input(input, cellName: cellName, currentValue: text)
+                    
                 default:
                     return
                 }

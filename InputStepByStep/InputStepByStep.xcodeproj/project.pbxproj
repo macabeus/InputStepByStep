@@ -22,6 +22,7 @@
 		897570631EB9DBE100443BFA /* ShowInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570621EB9DBE100443BFA /* ShowInput.swift */; };
 		897570821EBAD4F000443BFA /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570811EBAD4F000443BFA /* DashedView.swift */; };
 		897570841EBAD9F400443BFA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570831EBAD9F400443BFA /* Extensions.swift */; };
+		897570881EBAE25A00443BFA /* CirclePercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570871EBAE25A00443BFA /* CirclePercentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		897570621EB9DBE100443BFA /* ShowInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInput.swift; sourceTree = "<group>"; };
 		897570811EBAD4F000443BFA /* DashedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		897570831EBAD9F400443BFA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		897570871EBAE25A00443BFA /* CirclePercentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePercentView.swift; sourceTree = "<group>"; };
 		CB341C77C05D71F08D4DF70B /* Pods-InputStepByStep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InputStepByStep.release.xcconfig"; path = "../Pods/Target Support Files/Pods-InputStepByStep/Pods-InputStepByStep.release.xcconfig"; sourceTree = "<group>"; };
 		EEAB233D5D42D7275C612E3D /* Pods_InputStepByStep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InputStepByStep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 				8975705A1EB9DB3D00443BFA /* CellConfigTitle.swift */,
 				8975705C1EB9DB4C00443BFA /* CellConfigInput.swift */,
 				8975705E1EB9DB6100443BFA /* CellConfigFinish.swift */,
+				897570871EBAE25A00443BFA /* CirclePercentView.swift */,
 				897570811EBAD4F000443BFA /* DashedView.swift */,
 				897570831EBAD9F400443BFA /* Extensions.swift */,
 				897570621EB9DBE100443BFA /* ShowInput.swift */,
@@ -239,6 +242,7 @@
 				897570841EBAD9F400443BFA /* Extensions.swift in Sources */,
 				8975705F1EB9DB6100443BFA /* CellConfigFinish.swift in Sources */,
 				8975705B1EB9DB3D00443BFA /* CellConfigTitle.swift in Sources */,
+				897570881EBAE25A00443BFA /* CirclePercentView.swift in Sources */,
 				8975705D1EB9DB4C00443BFA /* CellConfigInput.swift in Sources */,
 				897570631EB9DBE100443BFA /* ShowInput.swift in Sources */,
 				897570591EB9DB2400443BFA /* CellConfigDivision.swift in Sources */,

@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="64" height="213"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icK-Oc-OQM">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icK-Oc-OQM" customClass="CirclePercentView" customModule="InputStepByStep" customModuleProvider="target">
                         <rect key="frame" x="16" y="0.0" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>

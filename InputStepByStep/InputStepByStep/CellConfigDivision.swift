@@ -11,7 +11,7 @@ import Cartography
 
 class CellConfigDivision: UICollectionViewCell {
     
-    @IBOutlet weak var viewCircle: UIView!
+    @IBOutlet weak var viewCircle: CirclePercentView!
     @IBOutlet weak var viewDashed: UIView!
     @IBOutlet weak var labelResult: UILabel!
     
@@ -32,6 +32,10 @@ class CellConfigDivision: UICollectionViewCell {
             dashed.bottom == dashed.superview!.bottom ~ UILayoutPriorityRequired
             dashed.width == 1
         }
+    }
+    
+    func updateProress() {
+        viewCircle.setupDash(totalInputsFilled: Double(totalInputsFilled), totalInputs: Double(totalInputs))
     }
     
     override var canBecomeFocused: Bool {
