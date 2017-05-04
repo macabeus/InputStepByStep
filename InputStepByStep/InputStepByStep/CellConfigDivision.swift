@@ -13,19 +13,16 @@ class CellConfigDivision: UICollectionViewCell {
     
     @IBOutlet weak var viewCircle: CirclePercentView!
     @IBOutlet weak var viewDashed: UIView!
-    @IBOutlet weak var labelResult: UILabel!
     
     var totalInputs = 0
     var totalInputsFilled = 0
     
     func startCell() {
-        constrain(self.viewCircle, self.labelResult, self.viewDashed) { circle, label, dashed in
+        constrain(self.viewCircle, self.viewDashed) { circle, dashed in
             circle.top == circle.superview!.top
             circle.centerX == circle.superview!.centerX
             circle.height == 32
             circle.width == 32
-            
-            label.center == circle.center
             
             dashed.top == circle.bottom + 3
             dashed.centerX == dashed.superview!.centerX

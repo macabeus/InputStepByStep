@@ -21,15 +21,6 @@
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icK-Oc-OQM" customClass="CirclePercentView" customModule="InputStepByStep" customModuleProvider="target">
                         <rect key="frame" x="16" y="0.0" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CL-UA-4Ir">
-                                <rect key="frame" x="8" y="6" width="15" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-kT-otb" customClass="DashedView" customModule="InputStepByStep" customModuleProvider="target">
                         <rect key="frame" x="32" y="32" width="1" height="181"/>
@@ -40,7 +31,6 @@
             </view>
             <size key="customSize" width="64" height="213"/>
             <connections>
-                <outlet property="labelResult" destination="6CL-UA-4Ir" id="ryu-qp-VOc"/>
                 <outlet property="viewCircle" destination="icK-Oc-OQM" id="e75-dZ-CYp"/>
                 <outlet property="viewDashed" destination="CFK-kT-otb" id="8II-6r-Sr4"/>
             </connections>
