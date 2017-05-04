@@ -22,19 +22,19 @@ class ViewController: UIViewController, CollectionStepByStepProtocol {
     
     var cellConfigList: [CellCreateGrid] = [
         .name("part 1"),
-        CellCreateGrid.input(ConfigInput(name: "user", label: "User", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "user", label: "User"), cellName: "", currentValue: ""),
         .name("part 2"),
-        CellCreateGrid.input(ConfigInput(name: "password", label: "Password", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "spassword", label: "Second password", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "password", label: "Password"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "spassword", label: "Second password"), cellName: "", currentValue: ""),
         .name("part 3"),
-        CellCreateGrid.input(ConfigInput(name: "firtname", label: "Your first name", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "lastname", label: "Your last name", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "othername", label: "Other name", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "firtname", label: "Your first name"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "lastname", label: "Your last name"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "othername", label: "Other name"), cellName: "", currentValue: ""),
         .name("part 4"),
-        CellCreateGrid.input(ConfigInput(name: "github", label: "Github", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "facebook", label: "Facebook", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "linkedin", label: "Linkedin", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
-        CellCreateGrid.input(ConfigInput(name: "email", label: "E-Mail", inputType: .text, obligatory: true), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "github", label: "Github"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "facebook", label: "Facebook"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "linkedin", label: "Linkedin"), cellName: "", currentValue: ""),
+        CellCreateGrid.input(ConfigInput(name: "email", label: "E-Mail"), cellName: "", currentValue: ""),
         .finish()
     ]
     

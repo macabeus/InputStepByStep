@@ -16,14 +16,10 @@ public enum InputType {
 public struct ConfigInput {
     let name: String
     let label: String
-    let inputType: InputType
-    let obligatory: Bool
     
-    public init(name: String, label: String, inputType: InputType, obligatory: Bool) {
+    public init(name: String, label: String) {
         self.name = name
         self.label = label
-        self.inputType = inputType
-        self.obligatory = obligatory
     }
 }
 
