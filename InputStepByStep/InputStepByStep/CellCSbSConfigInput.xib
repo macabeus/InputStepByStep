@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="tvOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,27 +18,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="778" height="23"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbA-Xj-6tI">
-                        <rect key="frame" x="0.0" y="-13" width="703" height="45"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="45" id="fUR-ly-twD"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbA-Xj-6tI">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.42352941179999998" green="0.44705882349999998" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-Tc-DmE" customClass="DashedView" customModule="InputStepByStep" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="20" width="237" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="DbA-Xj-6tI" firstAttribute="top" secondItem="tlz-p2-ZPM" secondAttribute="topMargin" constant="-21" id="MBr-81-Ghc"/>
-                <constraint firstItem="DbA-Xj-6tI" firstAttribute="leading" secondItem="tlz-p2-ZPM" secondAttribute="leadingMargin" constant="-8" id="gLK-Hh-xfW"/>
-                <constraint firstItem="DbA-Xj-6tI" firstAttribute="width" secondItem="tlz-p2-ZPM" secondAttribute="width" constant="-75" id="lqO-ap-wpL"/>
-            </constraints>
             <size key="customSize" width="778" height="23"/>
             <connections>
                 <outlet property="labelField" destination="DbA-Xj-6tI" id="aMc-L2-FLJ"/>
+                <outlet property="underlineView" destination="WDE-Tc-DmE" id="uNS-8r-N9H"/>
             </connections>
-            <point key="canvasLocation" x="136" y="105"/>
+            <point key="canvasLocation" x="136" y="104.5"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Cartography
 
 class CellConfigInput: UICollectionViewCell {
     
     @IBOutlet weak var labelField: UILabel!
+    @IBOutlet weak var underlineView: DashedView!
     var inputName: String?
     var configTitle: String?
     var myCellDivisin: CellConfigDivision?
@@ -39,4 +41,23 @@ class CellConfigInput: UICollectionViewCell {
             })
         }
     }
+    
+    func updateWidthUnderline() {
+        removeConstraints(constraints)
+        
+        labelField.sizeToFit()
+        
+        constrain(labelField, underlineView) { field, underline in
+            field.top == field.superview!.top
+            field.left == field.superview!.left
+            field.height == field.height
+            field.width == field.width
+            
+            underline.top == field.bottom
+            underline.left == field.left
+            underline.width == 230
+            underline.height == 1
+        }
+    }
+    
 }

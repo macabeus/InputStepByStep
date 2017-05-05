@@ -99,6 +99,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
                 cell.labelField.text = input.label
             }
             
+            cell.updateWidthUnderline()
             return cell
         case .finish:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigFinish", for: indexPath) as! CellConfigFinish
@@ -130,6 +131,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
                 cell.myCellDivisin!.totalInputsFilled = self.inputValues[cell.configTitle!]!.count
                 cell.myCellDivisin!.updateProress()
                 cell.labelField.text = text
+                cell.updateWidthUnderline()
             }
             
             showInput.start(view: cell)
