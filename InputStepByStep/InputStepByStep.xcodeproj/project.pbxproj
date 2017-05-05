@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		7C656CB7B6A580AD3D6473A8 /* Pods_InputStepByStep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAB233D5D42D7275C612E3D /* Pods_InputStepByStep.framework */; };
 		8975702B1EB9D8CD00443BFA /* InputStepByStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 897570291EB9D8CD00443BFA /* InputStepByStep.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8975704D1EB9DA3E00443BFA /* CollectionStepByStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975704C1EB9DA3E00443BFA /* CollectionStepByStep.swift */; };
-		8975704F1EB9DA9500443BFA /* CollectionStepByStepLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975704E1EB9DA9500443BFA /* CollectionStepByStepLayout.swift */; };
-		897570511EB9DAB200443BFA /* CellCSbSDivision.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570501EB9DAB200443BFA /* CellCSbSDivision.xib */; };
-		897570531EB9DACF00443BFA /* CellCSbSConfigFinish.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570521EB9DACF00443BFA /* CellCSbSConfigFinish.xib */; };
-		897570551EB9DAE000443BFA /* CellCSbSConfigTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570541EB9DAE000443BFA /* CellCSbSConfigTitle.xib */; };
-		897570571EB9DAF200443BFA /* CellCSbSConfigInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570561EB9DAF200443BFA /* CellCSbSConfigInput.xib */; };
+		8975704D1EB9DA3E00443BFA /* InputStepByStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975704C1EB9DA3E00443BFA /* InputStepByStep.swift */; };
+		8975704F1EB9DA9500443BFA /* InputStepByStepLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975704E1EB9DA9500443BFA /* InputStepByStepLayout.swift */; };
+		897570511EB9DAB200443BFA /* CellDivision.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570501EB9DAB200443BFA /* CellDivision.xib */; };
+		897570531EB9DACF00443BFA /* CellConfigFinish.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570521EB9DACF00443BFA /* CellConfigFinish.xib */; };
+		897570551EB9DAE000443BFA /* CellConfigTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570541EB9DAE000443BFA /* CellConfigTitle.xib */; };
+		897570571EB9DAF200443BFA /* CellConfigInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897570561EB9DAF200443BFA /* CellConfigInput.xib */; };
 		897570591EB9DB2400443BFA /* CellConfigDivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570581EB9DB2400443BFA /* CellConfigDivision.swift */; };
 		8975705B1EB9DB3D00443BFA /* CellConfigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975705A1EB9DB3D00443BFA /* CellConfigTitle.swift */; };
 		8975705D1EB9DB4C00443BFA /* CellConfigInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975705C1EB9DB4C00443BFA /* CellConfigInput.swift */; };
@@ -30,12 +30,12 @@
 		897570261EB9D8CD00443BFA /* InputStepByStep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InputStepByStep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		897570291EB9D8CD00443BFA /* InputStepByStep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputStepByStep.h; sourceTree = "<group>"; };
 		8975702A1EB9D8CD00443BFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8975704C1EB9DA3E00443BFA /* CollectionStepByStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionStepByStep.swift; sourceTree = "<group>"; };
-		8975704E1EB9DA9500443BFA /* CollectionStepByStepLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionStepByStepLayout.swift; sourceTree = "<group>"; };
-		897570501EB9DAB200443BFA /* CellCSbSDivision.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSDivision.xib; sourceTree = "<group>"; };
-		897570521EB9DACF00443BFA /* CellCSbSConfigFinish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigFinish.xib; sourceTree = "<group>"; };
-		897570541EB9DAE000443BFA /* CellCSbSConfigTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigTitle.xib; sourceTree = "<group>"; };
-		897570561EB9DAF200443BFA /* CellCSbSConfigInput.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCSbSConfigInput.xib; sourceTree = "<group>"; };
+		8975704C1EB9DA3E00443BFA /* InputStepByStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStepByStep.swift; sourceTree = "<group>"; };
+		8975704E1EB9DA9500443BFA /* InputStepByStepLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStepByStepLayout.swift; sourceTree = "<group>"; };
+		897570501EB9DAB200443BFA /* CellDivision.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellDivision.xib; sourceTree = "<group>"; };
+		897570521EB9DACF00443BFA /* CellConfigFinish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellConfigFinish.xib; sourceTree = "<group>"; };
+		897570541EB9DAE000443BFA /* CellConfigTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellConfigTitle.xib; sourceTree = "<group>"; };
+		897570561EB9DAF200443BFA /* CellConfigInput.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellConfigInput.xib; sourceTree = "<group>"; };
 		897570581EB9DB2400443BFA /* CellConfigDivision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigDivision.swift; sourceTree = "<group>"; };
 		8975705A1EB9DB3D00443BFA /* CellConfigTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigTitle.swift; sourceTree = "<group>"; };
 		8975705C1EB9DB4C00443BFA /* CellConfigInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigInput.swift; sourceTree = "<group>"; };
@@ -92,12 +92,12 @@
 			children = (
 				897570291EB9D8CD00443BFA /* InputStepByStep.h */,
 				8975702A1EB9D8CD00443BFA /* Info.plist */,
-				8975704C1EB9DA3E00443BFA /* CollectionStepByStep.swift */,
-				8975704E1EB9DA9500443BFA /* CollectionStepByStepLayout.swift */,
-				897570501EB9DAB200443BFA /* CellCSbSDivision.xib */,
-				897570521EB9DACF00443BFA /* CellCSbSConfigFinish.xib */,
-				897570541EB9DAE000443BFA /* CellCSbSConfigTitle.xib */,
-				897570561EB9DAF200443BFA /* CellCSbSConfigInput.xib */,
+				8975704C1EB9DA3E00443BFA /* InputStepByStep.swift */,
+				8975704E1EB9DA9500443BFA /* InputStepByStepLayout.swift */,
+				897570501EB9DAB200443BFA /* CellDivision.xib */,
+				897570521EB9DACF00443BFA /* CellConfigFinish.xib */,
+				897570541EB9DAE000443BFA /* CellConfigTitle.xib */,
+				897570561EB9DAF200443BFA /* CellConfigInput.xib */,
 				897570581EB9DB2400443BFA /* CellConfigDivision.swift */,
 				8975705A1EB9DB3D00443BFA /* CellConfigTitle.swift */,
 				8975705C1EB9DB4C00443BFA /* CellConfigInput.swift */,
@@ -191,10 +191,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				897570551EB9DAE000443BFA /* CellCSbSConfigTitle.xib in Resources */,
-				897570571EB9DAF200443BFA /* CellCSbSConfigInput.xib in Resources */,
-				897570511EB9DAB200443BFA /* CellCSbSDivision.xib in Resources */,
-				897570531EB9DACF00443BFA /* CellCSbSConfigFinish.xib in Resources */,
+				897570551EB9DAE000443BFA /* CellConfigTitle.xib in Resources */,
+				897570571EB9DAF200443BFA /* CellConfigInput.xib in Resources */,
+				897570511EB9DAB200443BFA /* CellDivision.xib in Resources */,
+				897570531EB9DACF00443BFA /* CellConfigFinish.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,8 +246,8 @@
 				8975705D1EB9DB4C00443BFA /* CellConfigInput.swift in Sources */,
 				897570631EB9DBE100443BFA /* ShowInput.swift in Sources */,
 				897570591EB9DB2400443BFA /* CellConfigDivision.swift in Sources */,
-				8975704F1EB9DA9500443BFA /* CollectionStepByStepLayout.swift in Sources */,
-				8975704D1EB9DA3E00443BFA /* CollectionStepByStep.swift in Sources */,
+				8975704F1EB9DA9500443BFA /* InputStepByStepLayout.swift in Sources */,
+				8975704D1EB9DA3E00443BFA /* InputStepByStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

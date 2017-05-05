@@ -9,10 +9,10 @@
 import UIKit
 import InputStepByStep
 
-class ViewController: UIViewController, CollectionStepByStepProtocol {
+class ViewController: UIViewController, InputStepByStepProtocol {
     
     @IBOutlet weak var container: UIView!
-    var containerStepByStep: CollectionStepByStep?
+    var containerStepByStep: InputStepByStep?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class ViewController: UIViewController, CollectionStepByStepProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "segueInputStepyBtStep" {
-            self.containerStepByStep = (segue.destination as! CollectionStepByStep)
+            self.containerStepByStep = (segue.destination as! InputStepByStep)
             self.containerStepByStep!.delegate = self
         }
     }

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Bruno Macabeus Aquino. All rights reserved.
 //
 
-protocol CollectionStepyByStepLayoutDelegate {
+protocol InputStepyByStepLayoutDelegate {
     
     func numberOfInputsAtStep(section: Int) -> Int
     func cellTypeAt(section: Int, row: Int) -> CellStepByStepType
@@ -19,9 +19,9 @@ enum CellStepByStepType {
     case finish
 }
 
-class CollectionStepByStepLayout: UICollectionViewLayout {
+class InputStepByStepLayout: UICollectionViewLayout {
     
-    var delegate: CollectionStepyByStepLayoutDelegate!
+    var delegate: InputStepyByStepLayoutDelegate!
     
     var cellPadding: CGFloat = 0.0
     

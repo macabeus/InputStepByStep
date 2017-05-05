@@ -29,25 +29,25 @@ public enum CellCreateGrid {
     case finish()
 }
 
-public protocol CollectionStepByStepProtocol {
+public protocol InputStepByStepProtocol {
     var cellConfigList: [CellCreateGrid] { get set }
     func cellFinishAction(inputValues: [String: [String: String]])
 }
 
-public class CollectionStepByStep: UICollectionViewController, CollectionStepyByStepLayoutDelegate {
+public class InputStepByStep: UICollectionViewController, InputStepyByStepLayoutDelegate {
     
-    public var delegate: CollectionStepByStepProtocol?
+    public var delegate: InputStepByStepProtocol?
     var inputValues: [String: [String: String]] = [:]
     let showInput = ShowInput()
     
     public override func viewDidLoad() {
-        collectionView!.collectionViewLayout = CollectionStepByStepLayout()
-        (collectionView!.collectionViewLayout as! CollectionStepByStepLayout).delegate = self
+        collectionView!.collectionViewLayout = InputStepByStepLayout()
+        (collectionView!.collectionViewLayout as! InputStepByStepLayout).delegate = self
         
-        collectionView!.register(UINib(nibName: "CellCSbSDivision", bundle: Bundle(for: CollectionStepByStep.self)), forCellWithReuseIdentifier: "CellCSbSDivision")
-        collectionView!.register(UINib(nibName: "CellCSbSConfigFinish", bundle: Bundle(for: CollectionStepByStep.self)), forCellWithReuseIdentifier: "CellCSbSConfigFinish")
-        collectionView!.register(UINib(nibName: "CellCSbSConfigTitle", bundle: Bundle(for: CollectionStepByStep.self)), forCellWithReuseIdentifier: "CellCSbSConfigTitle")
-        collectionView!.register(UINib(nibName: "CellCSbSConfigInput", bundle: Bundle(for: CollectionStepByStep.self)), forCellWithReuseIdentifier: "CellCSbSConfigInput")
+        collectionView!.register(UINib(nibName: "CellDivision", bundle: Bundle(for: InputStepByStep.self)), forCellWithReuseIdentifier: "CellDivision")
+        collectionView!.register(UINib(nibName: "CellConfigFinish", bundle: Bundle(for: InputStepByStep.self)), forCellWithReuseIdentifier: "CellConfigFinish")
+        collectionView!.register(UINib(nibName: "CellConfigTitle", bundle: Bundle(for: InputStepByStep.self)), forCellWithReuseIdentifier: "CellConfigTitle")
+        collectionView!.register(UINib(nibName: "CellConfigInput", bundle: Bundle(for: InputStepByStep.self)), forCellWithReuseIdentifier: "CellConfigInput")
     }
     
     override public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -74,11 +74,11 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
             let cell: UICollectionViewCell
             
             if indexPath.item == 0 {
-                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSDivision", for: indexPath)
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDivision", for: indexPath)
                 (cell as! CellConfigDivision).startCell()
                 lastCellDivision = (cell as! CellConfigDivision)
             } else {
-                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigTitle", for: indexPath)
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigTitle", for: indexPath)
                 (cell as! CellConfigTitle).labelTitle.text = name
                 currentTitle = name
                 inputValues[name] = [:]
@@ -86,7 +86,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
             
             return cell
         case .input(let input, _):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigInput", for: indexPath) as! CellConfigInput
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
             
             lastCellDivision!.totalInputs += 1
             cell.inputName = input.label
@@ -102,7 +102,7 @@ public class CollectionStepByStep: UICollectionViewController, CollectionStepyBy
             cell.updateWidthUnderline()
             return cell
         case .finish:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellCSbSConfigFinish", for: indexPath) as! CellConfigFinish
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigFinish", for: indexPath) as! CellConfigFinish
             
             cell.startCell()
             
