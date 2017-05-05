@@ -8,29 +8,14 @@
 
 import UIKit
 
-public enum InputType {
-    case text
-    case number
-}
-
-public struct ConfigInput {
-    let name: String
-    let label: String
-    
-    public init(name: String, label: String) {
-        self.name = name
-        self.label = label
-    }
-}
-
 public enum CellCreateGrid {
     case name(String)
-    case input(ConfigInput, cellName: String)
+    case input(name: String, label: String)
     case finish()
 }
 
 public protocol InputStepByStepProtocol {
-    var cellConfigList: [CellCreateGrid] { get set }
+    var configList: [CellCreateGrid] { get }
     func cellFinishAction(inputValues: [String: [String: String]])
 }
 
@@ -51,11 +36,11 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
     }
     
     override public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return delegate!.cellConfigList.count
+        return delegate!.configList.count
     }
     
     override public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch delegate!.cellConfigList[section] {
+        switch delegate!.configList[section] {
         case .name(_):
             return 2
         default:
@@ -67,7 +52,7 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
     var currentTitle: String?
     override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let currentCell = delegate!.cellConfigList[indexPath.section]
+        let currentCell = delegate!.configList[indexPath.section]
         
         switch currentCell {
         case .name(let name):
@@ -85,18 +70,18 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
             }
             
             return cell
-        case .input(let input, _):
+        case .input(let name, let label):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
             
             lastCellDivision!.totalInputs += 1
-            cell.inputName = input.label
+            cell.inputName = name
             cell.configTitle = currentTitle
             cell.myCellDivisin = lastCellDivision
             
             if let value = inputValues[cell.configTitle!]![cell.inputName!] {
                 cell.labelField.text = value
             } else {
-                cell.labelField.text = input.label
+                cell.labelField.text = label
             }
             
             cell.updateWidthUnderline()
@@ -145,7 +130,7 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
     func numberOfInputsAtStep(section: Int) -> Int {
         var count = 0
         var sectionCurrent = section + 1
-        while delegate!.cellConfigList.count != sectionCurrent && Mirror(reflecting: delegate!.cellConfigList[sectionCurrent]).children.first?.label! != "name" {
+        while delegate!.configList.count != sectionCurrent && Mirror(reflecting: delegate!.configList[sectionCurrent]).children.first?.label! != "name" {
             count += 1
             sectionCurrent += 1
         }
@@ -154,7 +139,7 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
     }
     
     func cellTypeAt(section: Int, row: Int) -> CellStepByStepType {
-        let currentCell = delegate!.cellConfigList[section]
+        let currentCell = delegate!.configList[section]
         
         switch currentCell {
         case .name:
