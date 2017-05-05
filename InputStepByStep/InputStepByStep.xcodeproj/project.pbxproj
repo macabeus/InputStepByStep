@@ -23,6 +23,7 @@
 		897570821EBAD4F000443BFA /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570811EBAD4F000443BFA /* DashedView.swift */; };
 		897570841EBAD9F400443BFA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570831EBAD9F400443BFA /* Extensions.swift */; };
 		897570881EBAE25A00443BFA /* CirclePercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897570871EBAE25A00443BFA /* CirclePercentView.swift */; };
+		899E07071EBCAAFC003B68AF /* InputStepByStep.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 899E07061EBCAAFC003B68AF /* InputStepByStep.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		897570811EBAD4F000443BFA /* DashedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		897570831EBAD9F400443BFA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		897570871EBAE25A00443BFA /* CirclePercentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePercentView.swift; sourceTree = "<group>"; };
+		899E07061EBCAAFC003B68AF /* InputStepByStep.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = InputStepByStep.podspec; path = ../InputStepByStep.podspec; sourceTree = "<group>"; };
 		CB341C77C05D71F08D4DF70B /* Pods-InputStepByStep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InputStepByStep.release.xcconfig"; path = "../Pods/Target Support Files/Pods-InputStepByStep/Pods-InputStepByStep.release.xcconfig"; sourceTree = "<group>"; };
 		EEAB233D5D42D7275C612E3D /* Pods_InputStepByStep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InputStepByStep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 		8975701C1EB9D8CD00443BFA = {
 			isa = PBXGroup;
 			children = (
+				899E07061EBCAAFC003B68AF /* InputStepByStep.podspec */,
 				897570281EB9D8CD00443BFA /* InputStepByStep */,
 				897570271EB9D8CD00443BFA /* Products */,
 				49A77C588B28C343F1D1D16B /* Pods */,
@@ -194,6 +197,7 @@
 				897570551EB9DAE000443BFA /* CellConfigTitle.xib in Resources */,
 				897570571EB9DAF200443BFA /* CellConfigInput.xib in Resources */,
 				897570511EB9DAB200443BFA /* CellDivision.xib in Resources */,
+				899E07071EBCAAFC003B68AF /* InputStepByStep.podspec in Resources */,
 				897570531EB9DACF00443BFA /* CellConfigFinish.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
