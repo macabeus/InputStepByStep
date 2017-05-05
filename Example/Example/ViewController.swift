@@ -17,29 +17,37 @@ class ViewController: UIViewController, InputStepByStepProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.3096483882, green: 0.1987901881, blue: 0.5863635563, alpha: 1)
     }
     
-    var cellConfigList: [CellCreateGrid] = [
-        .name("part 1"),
-        CellCreateGrid.input(ConfigInput(name: "user", label: "User"), cellName: ""),
-        .name("part 2"),
-        CellCreateGrid.input(ConfigInput(name: "password", label: "Password"), cellName: ""),
-        CellCreateGrid.input(ConfigInput(name: "spassword", label: "Second password"), cellName: ""),
-        .name("part 3"),
-        CellCreateGrid.input(ConfigInput(name: "firtname", label: "Your first name"), cellName: ""),
-        CellCreateGrid.input(ConfigInput(name: "lastname", label: "Your last name"), cellName: ""),
-        CellCreateGrid.input(ConfigInput(name: "othername", label: "Other name"), cellName: ""),
-        .name("part 4"),
-        CellCreateGrid.input(ConfigInput(name: "github", label: "Github"), cellName: ""),
-        CellCreateGrid.input(ConfigInput(name: "facebook", label: "Facebook"), cellName: ""),
-        CellCreateGrid.input(ConfigInput(name: "linkedin", label: "Linkedin"), cellName: ""),
-        CellCreateGrid.input(ConfigInput(name: "email", label: "E-Mail"), cellName: ""),
+    var configList: [CellCreateGrid] = [
+        .name("Login"),
+        .input(name: "user", label: "User"),
+        .input(name: "password", label: "Password"),
+        .input(name: "email", label: "E-Mail"),
+        
+        .name("Personal infos"),
+        .input(name: "firtname", label: "Your first name"),
+        .input(name: "lastname", label: "Your last name"),
+        
+        .name("Social network"),
+        .input(name: "github", label: "Github"),
+        .input(name: "facebook", label: "Facebook"),
+        .input(name: "linkedin", label: "Linkedin"),
+        .input(name: "stackoverflow", label: "Stackoverflow"),
+        
         .finish()
     ]
     
     func cellFinishAction(inputValues: [String: [String: String]]) {
         print("do something...")
+        
+        if let user = inputValues["Login"]?["user"],
+            let password = inputValues["Login"]?["password"],
+            let email = inputValues["Login"]?["email"] {
+            
+            print("create account with login \(user), password \(password) and email \(email)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
