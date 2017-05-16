@@ -8,7 +8,7 @@
 
 protocol InputStepyByStepLayoutDelegate {
     
-    func numberOfInputsAtStep(section: Int) -> Int
+    func countInputsAtStep(section: Int) -> Int
     func cellTypeAt(section: Int, row: Int) -> CellStepByStepType
 }
 
@@ -27,7 +27,7 @@ class InputStepByStepLayout: UICollectionViewLayout {
     
     private var cache = [UICollectionViewLayoutAttributes]()
     
-    private var contentHeight: CGFloat  = 0.0
+    private var contentHeight: CGFloat = 0.0
     private var contentWidth: CGFloat {
         let insets = collectionView!.contentInset
         return collectionView!.bounds.width - (insets.left + insets.right)
@@ -56,7 +56,7 @@ class InputStepByStepLayout: UICollectionViewLayout {
                     switch cellType {
                     case .step:
                         slotWidth = stepColumnWidth
-                        slotHeight = CGFloat((delegate!.numberOfInputsAtStep(section: section) + 1) * 50)
+                        slotHeight = CGFloat((delegate!.countInputsAtStep(section: section) + 1) * 50)
                         frame = CGRect(x: 0, y: CGFloat(previusY), width: slotWidth, height: slotHeight)
                     case .finish:
                         slotWidth = contentWidth

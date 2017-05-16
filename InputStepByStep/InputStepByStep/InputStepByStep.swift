@@ -127,7 +127,7 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
     }
     
     // CollectionStepyByStepLayoutDelegate
-    func numberOfInputsAtStep(section: Int) -> Int {
+    func countInputsAtStep(section: Int) -> Int {
         var count = 0
         var sectionCurrent = section + 1
         while delegate!.configList.count != sectionCurrent && Mirror(reflecting: delegate!.configList[sectionCurrent]).children.first?.label! != "name" {
