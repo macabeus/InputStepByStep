@@ -62,11 +62,15 @@ class InputStepByStepLayout: UICollectionViewLayout {
                         slotWidth = contentWidth
                         slotHeight = 50
                         frame = CGRect(x: 0, y: CGFloat(previusY), width: slotWidth, height: slotHeight)
+                        
+                        contentHeight += slotHeight
                     default:
                         slotWidth = rightColumnWidth
                         slotHeight = 50
                         frame = CGRect(x: 60, y: CGFloat(previusY), width: slotWidth, height: slotHeight)
                         previusY += 50
+                        
+                        contentHeight += slotHeight
                     }
                     
                     // desenhar o frame da célula e adicioná-la ao cache

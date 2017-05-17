@@ -101,6 +101,21 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
         return true
     }
     
+    public override func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        
+        // when will focus on the first input, we need scroll to show the first name cell (position 0, 0)
+        // todo: works, but have a strange effect when focus on the first input
+        if let indexPath = context.nextFocusedIndexPath,
+            indexPath.section == 1 {
+            
+            collectionView.scrollToItem(
+                at: IndexPath(row: 0, section: 0),
+                at: .top,
+                animated: false
+            )
+        }
+    }
+    
     // input
     override public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
