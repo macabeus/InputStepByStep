@@ -48,6 +48,7 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
         }
     }
     
+    // todo: this function need be refactor, because have a bug when the collection reload a old cell
     var lastCellDivision: CellConfigDivision?
     var currentTitle: String?
     override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
