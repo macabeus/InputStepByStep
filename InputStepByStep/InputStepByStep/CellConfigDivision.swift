@@ -36,6 +36,8 @@ class CellConfigDivision: UICollectionViewCell {
             dashed.bottom == dashed.superview!.bottom ~ UILayoutPriorityRequired
             dashed.width == 1
         }
+        
+        viewCircle.setupDash(totalInputsFilled: 0, totalInputs: 1)
     }
     
     func updateProress() {

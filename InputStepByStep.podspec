@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "InputStepByStep"
-  s.version      = "0.0.1-beta"
+  s.version      = "0.0.2-beta"
   s.summary      = "A simple input view for tvOS, for testing purposes"
   s.homepage     = "https://github.com/brunomacabeusbr/InputStepByStep"
   s.license      = { :type => "MIT", :file => "LICENSE" }

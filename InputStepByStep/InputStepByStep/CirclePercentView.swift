@@ -27,12 +27,6 @@ class CirclePercentView: UIView {
         super.init(coder: aDecoder)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        //self.setupDash(totalInputsFilled: 0, totalInputs: 1)
-    }
-    
     func setupDash(totalInputsFilled: Double, totalInputs: Double) {
         self.layer.sublayers = nil
         
