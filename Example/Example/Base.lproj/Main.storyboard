@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
@@ -23,9 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwa-5a-wFg">
-                                <rect key="frame" x="214" y="20" width="924" height="1052"/>
+                                <rect key="frame" x="214" y="20" width="924" height="1040"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1052" id="RdB-b3-uwV"/>
+                                    <constraint firstAttribute="height" constant="1040" id="RdB-b3-uwV"/>
                                     <constraint firstAttribute="width" constant="924" id="yeX-WO-cX5"/>
                                 </constraints>
                                 <connections>
@@ -51,10 +51,10 @@
         <scene sceneID="BhO-2N-cRR">
             <objects>
                 <collectionViewController id="aIc-sn-RCR" customClass="InputStepByStep" customModule="InputStepByStep" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="t9Y-5b-adZ">
-                        <rect key="frame" x="0.0" y="0.0" width="924" height="1052"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="t9Y-5b-adZ">
+                        <rect key="frame" x="0.0" y="0.0" width="924" height="1040"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Way-ba-aIi">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CQN-6S-imy">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>

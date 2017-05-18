@@ -10,6 +10,11 @@ import UIKit
 
 class CirclePercentView: UIView {
     
+    var percentColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 1)
+    var percentBackgroundColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 0.5)
+    var backgroundOpacity: Float = 0.2
+    var percentFullColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 1)
+    
     override class var layerClass: AnyClass {
         return CAShapeLayer.self
     }
@@ -25,10 +30,12 @@ class CirclePercentView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.setupDash(totalInputsFilled: 0, totalInputs: 1)
+        //self.setupDash(totalInputsFilled: 0, totalInputs: 1)
     }
     
     func setupDash(totalInputsFilled: Double, totalInputs: Double) {
+        self.layer.sublayers = nil
+        
         let circleBackground = UIBezierPath(
             arcCenter: CGPoint(x: frame.width / 2, y: (frame.height / 2) + 2),
             radius: frame.height / 2,
@@ -40,11 +47,11 @@ class CirclePercentView: UIView {
         let shapeLayerBackground = CAShapeLayer()
         shapeLayerBackground.path = circleBackground.cgPath
         if totalInputsFilled == totalInputs {
-            shapeLayerBackground.fillColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 1).cgColor
+            shapeLayerBackground.fillColor = percentFullColor.cgColor
             shapeLayerBackground.opacity = 1
         } else {
-            shapeLayerBackground.fillColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 0.5).cgColor
-            shapeLayerBackground.opacity = 0.2
+            shapeLayerBackground.fillColor = percentBackgroundColor.cgColor
+            shapeLayerBackground.opacity = backgroundOpacity
         }
         
         let circlePath = UIBezierPath(
@@ -59,7 +66,11 @@ class CirclePercentView: UIView {
         shapeLayer.path = circlePath.cgPath
         shapeLayer.fillColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0).cgColor
         
-        shapeLayer.strokeColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 1).cgColor
+        if totalInputsFilled == totalInputs {
+            shapeLayer.strokeColor = percentFullColor.cgColor
+        } else {
+            shapeLayer.strokeColor = percentBackgroundColor.cgColor
+        }
         shapeLayer.lineWidth = 4
         
         //

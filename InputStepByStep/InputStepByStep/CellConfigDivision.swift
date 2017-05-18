@@ -17,7 +17,14 @@ class CellConfigDivision: UICollectionViewCell {
     var totalInputs = 0
     var totalInputsFilled = 0
     
-    func startCell() {
+    func startCell(required: Bool) {
+        if required {
+            viewCircle.percentColor = #colorLiteral(red: 1, green: 0.2509803922, blue: 0.4784313725, alpha: 1)
+            viewCircle.percentBackgroundColor = #colorLiteral(red: 1, green: 0.250980407, blue: 0.4784313738, alpha: 0.5)
+            viewCircle.backgroundOpacity = 0.8
+            viewCircle.percentFullColor = #colorLiteral(red: 0.7215686275, green: 0.3960784314, blue: 0.8235294118, alpha: 1)
+        }
+        
         constrain(self.viewCircle, self.viewDashed) { circle, dashed in
             circle.top == circle.superview!.top
             circle.centerX == circle.superview!.centerX

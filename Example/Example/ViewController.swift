@@ -17,20 +17,20 @@ class ViewController: UIViewController, InputStepByStepProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = #colorLiteral(red: 0.3096483882, green: 0.1987901881, blue: 0.5863635563, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
     
     var configList: [CellCreateGrid] = [
-        .name("Login"),
+        .name("Login", required: true),
         .input(name: "user", label: "User"),
         .input(name: "password", label: "Password"),
         .input(name: "email", label: "E-Mail"),
         
-        .name("Personal infos"),
+        .name("Personal infos", required: false),
         .input(name: "firtname", label: "Your first name"),
         .input(name: "lastname", label: "Your last name"),
         
-        .name("Social network"),
+        .name("Social network", required: false),
         .input(name: "github", label: "Github"),
         .input(name: "facebook", label: "Facebook"),
         .input(name: "linkedin", label: "Linkedin"),

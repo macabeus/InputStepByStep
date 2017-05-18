@@ -9,7 +9,7 @@
 import UIKit
 
 public enum CellCreateGrid {
-    case name(String)
+    case name(String, required: Bool)
     case input(name: String, label: String)
     case finish()
 }
@@ -55,21 +55,26 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
         let currentCell = delegate!.configList[indexPath.section]
         
         switch currentCell {
-        case .name(let name):
+        case .name(let name, let required):
             let cell: UICollectionViewCell
             
             if indexPath.item == 0 {
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDivision", for: indexPath)
-                (cell as! CellConfigDivision).startCell()
+                (cell as! CellConfigDivision).startCell(required: required)
                 lastCellDivision = (cell as! CellConfigDivision)
             } else {
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigTitle", for: indexPath)
-                (cell as! CellConfigTitle).labelTitle.text = name
+                if required {
+                    (cell as! CellConfigTitle).labelTitle.text = "\(name)  (required)"
+                } else {
+                    (cell as! CellConfigTitle).labelTitle.text = name
+                }
                 currentTitle = name
                 inputValues[name] = [:]
             }
             
             return cell
+        
         case .input(let name, let label):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigInput", for: indexPath) as! CellConfigInput
             
@@ -86,6 +91,7 @@ public class InputStepByStep: UICollectionViewController, InputStepyByStepLayout
             
             cell.updateWidthUnderline()
             return cell
+        
         case .finish:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellConfigFinish", for: indexPath) as! CellConfigFinish
             
